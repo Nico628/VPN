@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="ttk.Frame" id="mainwindow">
+    <property name="cursor">arrow</property>
+    <property name="height">300</property>
+    <property name="takefocus">false</property>
+    <property name="width">8000</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="ttk.Labelframe" id="Connection Inputs">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Connection Inputs
+</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="IP">
+            <property name="text" translatable="yes">IP Address</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="IP entry">
+            <property name="exportselection">true</property>
+            <property name="font">TkDefaultFont</property>
+            <property name="text" translatable="yes">localhost</property>
+            <property name="textvariable">string:IP_address</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="Port">
+            <property name="text" translatable="yes">Port</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="Port Entry">
+            <property name="text" translatable="yes">8080</property>
+            <property name="textvariable">string:Port_number</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="Shared Secret">
+            <property name="text" translatable="yes">Shared Secret</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="Shared Secret entry">
+            <property name="font">TkDefaultFont</property>
+            <property name="justify">left</property>
+            <property name="text" translatable="yes">shhhhh</property>
+            <property name="textvariable">string:Shared_secret</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">5</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Checkbutton" id="Server">
+            <property name="compound">top</property>
+            <property name="cursor">arrow</property>
+            <property name="offvalue">Server</property>
+            <property name="onvalue">Client</property>
+            <property name="state">normal</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Server</property>
+            <property name="textvariable">string:server</property>
+            <property name="underline">0</property>
+            <property name="variable">string:server</property>
+            <property name="width">7</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">6</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="Confirm Connection">
+            <property name="command">confirm_connection</property>
+            <property name="compound">bottom</property>
+            <property name="cursor">based_arrow_down</property>
+            <property name="state">normal</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Confirm</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">7</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="disconnect">
+            <property name="command">disconnect</property>
+            <property name="text" translatable="yes">Disconnect</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">8</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="messaging">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Messaging</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">n</property>
+          <rows>
+            <row id="0">
+              <property name="pad">10</property>
+              <property name="weight">0</property>
+            </row>
+            <row id="1">
+              <property name="minsize">0</property>
+            </row>
+          </rows>
+        </layout>
+        <child>
+          <object class="tk.Text" id="messages">
+            <property name="height">21</property>
+            <property name="insertborderwidth">0</property>
+            <property name="insertofftime">0</property>
+            <property name="insertontime">200</property>
+            <property name="insertwidth">0</property>
+            <property name="padx">1</property>
+            <property name="pady">0</property>
+            <property name="text" translatable="yes">Messages start here
+</property>
+            <property name="width">35</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="m_entry">
+            <property name="text" translatable="yes">Type Message Here</property>
+            <property name="textvariable">string:m_var</property>
+            <property name="width">45</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="Send Message">
+            <property name="command">send_message</property>
+            <property name="text" translatable="yes">Send</property>
+            <property name="width">10</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="Receive">
+            <property name="command">rec_message</property>
+            <property name="text" translatable="yes">Receive</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+              <property name="sticky">ne</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="Debug">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Log</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">3</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">ne</property>
+          <rows>
+            <row id="0">
+              <property name="pad">10</property>
+            </row>
+          </rows>
+        </layout>
+        <child>
+          <object class="tk.Text" id="Log">
+            <property name="height">21</property>
+            <property name="maxundo">0</property>
+            <property name="relief">flat</property>
+            <property name="selectborderwidth">0</property>
+            <property name="state">normal</property>
+            <property name="text" translatable="yes">Log</property>
+            <property name="width">35</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="debug_settings">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Debug settings
+</property>
+        <property name="width">156</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">sw</property>
+        </layout>
+        <child>
+          <object class="ttk.Checkbutton" id="debug_check">
+            <property name="command">debug_setting_change</property>
+            <property name="offvalue">Debug_Off</property>
+            <property name="onvalue">Debug_On</property>
+            <property name="text" translatable="yes">Debug Setting</property>
+            <property name="textvariable">string:debug_var</property>
+            <property name="variable">string:debug_var</property>
+            <property name="width">18</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">nw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="Continue">
+            <property name="command">continue_button_pressed</property>
+            <property name="text" translatable="yes">Continue</property>
+            <property name="textvariable">string:continue</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
